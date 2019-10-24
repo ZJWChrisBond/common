@@ -1,13 +1,11 @@
 package com.zjw.common.utils.file;
 
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.util.Assert;
-import org.springframework.util.ResourceUtils;
 import org.springframework.util.StringUtils;
-import sun.nio.ch.IOUtil;
 
-import java.io.*;
-import java.lang.reflect.Array;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 

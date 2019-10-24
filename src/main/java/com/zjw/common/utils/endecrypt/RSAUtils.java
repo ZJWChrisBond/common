@@ -1,7 +1,5 @@
 package com.zjw.common.utils.endecrypt;
 
-import org.springframework.beans.factory.annotation.Value;
-
 import javax.crypto.Cipher;
 import java.io.*;
 import java.math.BigInteger;
