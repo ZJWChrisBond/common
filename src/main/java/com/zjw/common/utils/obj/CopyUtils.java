@@ -14,7 +14,8 @@ import java.util.List;
 public class CopyUtils {
 
     /**
-     *   List<T> destList=deepCopy(srcList);  //调用该方法
+     * List<T> destList=deepCopy(srcList);  //调用该方法
+     *
      * @param src
      * @param <T>
      * @return

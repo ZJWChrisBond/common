@@ -16,11 +16,12 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class IPUtilsTest {
 
-  @Test
-  void iptest(){
-      String ip = "110.111.112.113";  long ipl =1852797041l;
-      assertEquals(ipl,IPUtils.IP2Long(ip));
+    @Test
+    void iptest() {
+        String ip = "110.111.112.113";
+        long ipl = 1852797041l;
+        assertEquals(ipl, IPUtils.IP2Long(ip));
 
-      assertEquals(ip,IPUtils.long2IP(ipl));
-  }
+        assertEquals(ip, IPUtils.long2IP(ipl));
+    }
 }

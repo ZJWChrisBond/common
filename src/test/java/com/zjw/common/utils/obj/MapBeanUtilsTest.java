@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
  */
 class MapBeanUtilsTest {
 
-    class User{
+    class User {
         public Integer getId() {
             return id;
         }
@@ -30,12 +30,12 @@ class MapBeanUtilsTest {
         }
 
         private Integer id;
-        private String  name;
+        private String name;
     }
 
     @Test
-    void test(){
-        User  user=new User();
+    void test() {
+        User user = new User();
         user.setId(3);
         user.setName("ddd");
         MapBeanUtils.beanToMap(user);

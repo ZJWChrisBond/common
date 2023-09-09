@@ -12,7 +12,7 @@ import java.util.UUID;
  * @since 1.0
  */
 public class UUIDUtils {
-    public static String getKid(){
+    public static String getKid() {
         String base = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-";
         Random random = new Random();
         StringBuffer sb = new StringBuffer();
@@ -22,7 +22,8 @@ public class UUIDUtils {
         }
         return sb.toString();
     }
-    public static String getGUID(){
+
+    public static String getGUID() {
         return UUID.randomUUID().toString();
     }
 

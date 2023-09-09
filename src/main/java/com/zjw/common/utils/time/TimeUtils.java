@@ -19,20 +19,26 @@ import java.util.Date;
 public class TimeUtils {
     private static final Logger LOG = LoggerFactory.getLogger(TimeUtils.class);
 
-    /**判断存在时间是否超过threshold,单位毫秒**/
-    public static boolean isExpireTime(long time,long threshold){
+    /**
+     * 判断存在时间是否超过threshold,单位毫秒
+     **/
+    public static boolean isExpireTime(long time, long threshold) {
         return System.currentTimeMillis() - time > threshold;
     }
+
     /**
      * 当前时间
+     *
      * @return
      */
-    public static String nowString () {
+    public static String nowString() {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        return  df.format(new Date());  // new Date()为获取当前系统时间
+        return df.format(new Date());  // new Date()为获取当前系统时间
     }
+
     /**
      * 获取系统的年
+     *
      * @return
      */
     public static String getSysYear() {
@@ -43,9 +49,10 @@ public class TimeUtils {
 
     /**
      * 获取当前的年
+     *
      * @return
      */
-    public static String getCurrentYear(){
+    public static String getCurrentYear() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
         Date date = new Date();
         return sdf.format(date);
@@ -62,10 +69,11 @@ public class TimeUtils {
         res = String.valueOf(ts);
         return res;
     }
+
     /**
      * 将时间戳转换为时间
      */
-    public static String stampToDate(String s){
+    public static String stampToDate(String s) {
         String res;
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         long lt = new Long(s);

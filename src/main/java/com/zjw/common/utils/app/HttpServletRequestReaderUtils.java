@@ -16,24 +16,24 @@ import java.io.IOException;
 public class HttpServletRequestReaderUtils {
 
     // 字符串读取
-    public static String readAsString(HttpServletRequest request){
+    public static String readAsString(HttpServletRequest request) {
 
         BufferedReader br = null;
         StringBuilder sb = new StringBuilder("");
-        try{
+        try {
             br = request.getReader();
             String str;
-            while ((str = br.readLine()) != null){
+            while ((str = br.readLine()) != null) {
                 sb.append(str);
             }
             br.close();
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
-        }finally{
-            if (null != br){
-                try{
+        } finally {
+            if (null != br) {
+                try {
                     br.close();
-                } catch (IOException e){
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
@@ -42,25 +42,24 @@ public class HttpServletRequestReaderUtils {
     }
 
 
-
     // 二进制读取
-    public static byte[] readAsBytes(HttpServletRequest request){
+    public static byte[] readAsBytes(HttpServletRequest request) {
 
         int len = request.getContentLength();
         byte[] buffer = new byte[len];
         ServletInputStream in = null;
 
-        try{
+        try {
             in = request.getInputStream();
             in.read(buffer, 0, len);
             in.close();
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
-        }finally{
-            if (null != in){
-                try{
+        } finally {
+            if (null != in) {
+                try {
                     in.close();
-                }catch (IOException e){
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }

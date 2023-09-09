@@ -17,21 +17,24 @@ import javax.servlet.http.HttpServletResponse;
 public class HttpServletUtils {
     /**
      * 获取HttpServletRequest
+     *
      * @return
      */
-    public static HttpServletRequest getHttpServletRequest(){
+    public static HttpServletRequest getHttpServletRequest() {
         ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = servletRequestAttributes.getRequest();
         return request;
     }
+
     /**
      * 获取HttpServletResponse
+     *
      * @return
      */
-    public static HttpServletResponse getHttpServletResponse(){
+    public static HttpServletResponse getHttpServletResponse() {
         ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletResponse response = servletRequestAttributes.getResponse();
-        return response ;
+        return response;
     }
 
 }

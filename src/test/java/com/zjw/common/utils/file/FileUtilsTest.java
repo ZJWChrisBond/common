@@ -21,6 +21,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class FileUtilsTest {
     private static final Logger LOG = LoggerFactory.getLogger(FileUtilsTest.class);
+
     @BeforeEach
     void setUp() {
         LOG.info("==================开始测试文件操作工具===========");
@@ -30,10 +31,11 @@ class FileUtilsTest {
     void tearDown() {
         LOG.info("==================结束测试文件操作工具===========");
     }
+
     @Test
     void test() throws IOException {
         LOG.info("=============读取文件");
-        String path="files/test.txt";
-        assertEquals(2,FileUtils.countString(path,"测试"));
+        String path = "files/test.txt";
+        assertEquals(2, FileUtils.countString(path, "测试"));
     }
 }

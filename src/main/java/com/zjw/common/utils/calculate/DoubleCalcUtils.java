@@ -15,6 +15,7 @@ public class DoubleCalcUtils {
     /**
      * 修改精度
      * change precision
+     *
      * @param value
      * @param num
      * @return
@@ -27,7 +28,8 @@ public class DoubleCalcUtils {
 
     /**
      * 两个double相加方法
-     *  a+b
+     * a+b
+     *
      * @param a
      * @param b
      * @return
@@ -40,7 +42,8 @@ public class DoubleCalcUtils {
 
     /**
      * 两个double相加方法,并保留指定精度
-     *  a+b save assigned precision
+     * a+b save assigned precision
+     *
      * @param a
      * @param b
      * @param num
@@ -53,6 +56,7 @@ public class DoubleCalcUtils {
     /**
      * 两个double相减方法
      * a-b
+     *
      * @param a
      * @param b
      * @return
@@ -66,6 +70,7 @@ public class DoubleCalcUtils {
     /**
      * 两个double相减方法,并保留指定精度
      * a-b save assigned precision
+     *
      * @param a
      * @param b
      * @param num
@@ -78,6 +83,7 @@ public class DoubleCalcUtils {
     /**
      * 两个double相乘方法
      * a*b
+     *
      * @param a
      * @param b
      * @return
@@ -91,6 +97,7 @@ public class DoubleCalcUtils {
     /**
      * 两个double相乘方法,并保留指定精度
      * a*b save assigned precision
+     *
      * @param a
      * @param b
      * @param num
@@ -103,13 +110,14 @@ public class DoubleCalcUtils {
     /**
      * 两个double相除方法,并保留指定精度
      * a/b  save assigned precision
+     *
      * @param a
      * @param b
      * @param scale
      * @return
      */
     public static Double doubleDiv(Double a, Double b, int scale) {
-        if(b==null||b==0D){
+        if (b == null || b == 0D) {
             return 0D;
         }
         BigDecimal b1 = new BigDecimal(Double.toString(a));
@@ -123,20 +131,21 @@ public class DoubleCalcUtils {
      * a>b -->return 1,
      * a=b -->return 0,
      * a<b -->return -1,
+     *
      * @param a
      * @param b
      * @return
      */
     public static int doubleCompare(Double a, Double b) {
-        if(a==null){
-            a=0.0D;
+        if (a == null) {
+            a = 0.0D;
         }
-        if(b==null){
-            b=0.0D;
+        if (b == null) {
+            b = 0.0D;
         }
         BigDecimal a1 = new BigDecimal(Double.toString(a.doubleValue()));
         BigDecimal b1 = new BigDecimal(Double.toString(b.doubleValue()));
-        int num=a1.compareTo(b1);
+        int num = a1.compareTo(b1);
         return num;
     }
 }

@@ -17,7 +17,8 @@ public class UnitConversionUtils {
     /**
      * 默认保留两位小数,四舍五入
      * UnitConversionUtils.conversion(new BigDecimal(12323.230),UnitConversionUtils.UnitsEnum.LG_M,
-     UnitConversionUtils.UnitsEnum.LG_KM);
+     * UnitConversionUtils.UnitsEnum.LG_KM);
+     *
      * @param value    原始数值
      * @param original 原始单位
      * @param need     转换的单位
@@ -26,8 +27,8 @@ public class UnitConversionUtils {
     public static BigDecimal conversion(BigDecimal value, UnitsEnum original, UnitsEnum need) {
         return conversion(value, original, need, 2);
     }
+
     /**
-     *
      * @param value    原始数值
      * @param original 原始单位
      * @param need     转换的单位
@@ -36,8 +37,10 @@ public class UnitConversionUtils {
     private static BigDecimal conversion(BigDecimal value, String original, String need) {
         return conversion(value, getUnitEnum(original), getUnitEnum(need));
     }
+
     /**
      * 四舍五入
+     *
      * @param value    原始数值
      * @param original 原始单位
      * @param need     转换的单位
@@ -53,8 +56,6 @@ public class UnitConversionUtils {
         }
         return value.multiply(need.rate).divide(original.rate, scale, BigDecimal.ROUND_HALF_UP);
     }
-
-
 
 
     private static UnitsEnum getUnitEnum(String unit) {
@@ -99,17 +100,15 @@ public class UnitConversionUtils {
         EG_CT(CategoryEnum.WEIGHT, "ct", new String[]{"ct", "克拉"}, new BigDecimal(5000), "克拉"),
 
         /*面积单位*/
-        AE_M(CategoryEnum.AREA, "㎡", new String[]{"m2","㎡","平方米"}, new BigDecimal(1), "平方米"),
-        AE_KM(CategoryEnum.AREA, "km²", new String[]{"km2","km²","平方千米"}, new BigDecimal(1e-6), "平方千米"),
-        AE_DM(CategoryEnum.AREA, "dm²", new String[]{"dm2","dm²","平方分米"}, new BigDecimal(100), "平方分米"),
-        AE_CM(CategoryEnum.AREA, "cm²", new String[]{"cm2","cm²","平方厘米"}, new BigDecimal(10000), "平方厘米"),
-        AE_MM(CategoryEnum.AREA, "mm²", new String[]{"mm2","mm²","平方毫米"}, new BigDecimal(1000000), "平方毫米"),
-        AE_HA(CategoryEnum.AREA, "ha", new String[]{"ha","公顷"}, new BigDecimal(0.0001), "公顷"),
+        AE_M(CategoryEnum.AREA, "㎡", new String[]{"m2", "㎡", "平方米"}, new BigDecimal(1), "平方米"),
+        AE_KM(CategoryEnum.AREA, "km²", new String[]{"km2", "km²", "平方千米"}, new BigDecimal(1e-6), "平方千米"),
+        AE_DM(CategoryEnum.AREA, "dm²", new String[]{"dm2", "dm²", "平方分米"}, new BigDecimal(100), "平方分米"),
+        AE_CM(CategoryEnum.AREA, "cm²", new String[]{"cm2", "cm²", "平方厘米"}, new BigDecimal(10000), "平方厘米"),
+        AE_MM(CategoryEnum.AREA, "mm²", new String[]{"mm2", "mm²", "平方毫米"}, new BigDecimal(1000000), "平方毫米"),
+        AE_HA(CategoryEnum.AREA, "ha", new String[]{"ha", "公顷"}, new BigDecimal(0.0001), "公顷"),
         AE_MU(CategoryEnum.AREA, "亩", new String[]{"亩"}, new BigDecimal(0.0015), "亩"),
-        AE_ARE(CategoryEnum.AREA, "are", new String[]{"are","公亩"}, new BigDecimal(0.01), "公亩"),
-        AE_ACRE(CategoryEnum.AREA, "acre", new String[]{"acre","英亩"}, new BigDecimal(0.0002471), "英亩"),
-
-
+        AE_ARE(CategoryEnum.AREA, "are", new String[]{"are", "公亩"}, new BigDecimal(0.01), "公亩"),
+        AE_ACRE(CategoryEnum.AREA, "acre", new String[]{"acre", "英亩"}, new BigDecimal(0.0002471), "英亩"),
 
 
         /*未知单位*/
@@ -154,7 +153,7 @@ public class UnitConversionUtils {
             /*类别：国际单位*/
             LENGTH("length", UnitsEnum.LG_M, "长度"),
             WEIGHT("weight", UnitsEnum.EG_KG, "重量"),
-            AREA("area",UnitsEnum.AE_M, "面积");
+            AREA("area", UnitsEnum.AE_M, "面积");
 
 
             private String name;

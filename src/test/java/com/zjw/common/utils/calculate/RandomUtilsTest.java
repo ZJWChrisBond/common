@@ -14,14 +14,14 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class RandomUtilsTest {
     @Test
-    void test(){
-        for(int i=0;i<50;i++){
-            int num= RandomUtils.getRandomInt(3,12);
-            assertTrue(num<=12&&num>=3);
+    void test() {
+        for (int i = 0; i < 50; i++) {
+            int num = RandomUtils.getRandomInt(3, 12);
+            assertTrue(num <= 12 && num >= 3);
         }
-        for(int i=0;i<50;i++){
-            double num= RandomUtils.getRandomDouble(10D,13D);
-            assertTrue(DoubleCalcUtils.doubleCompare(num,10D)>=0&&DoubleCalcUtils.doubleCompare(num,20D)<=0);
+        for (int i = 0; i < 50; i++) {
+            double num = RandomUtils.getRandomDouble(10D, 13D);
+            assertTrue(DoubleCalcUtils.doubleCompare(num, 10D) >= 0 && DoubleCalcUtils.doubleCompare(num, 20D) <= 0);
         }
     }
 

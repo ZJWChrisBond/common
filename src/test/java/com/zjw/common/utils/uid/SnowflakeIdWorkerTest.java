@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.UUID;
+
 /**
  * @version 1.0
  * @Author: zjw
@@ -16,6 +18,7 @@ import org.slf4j.LoggerFactory;
  */
 class SnowflakeIdWorkerTest {
     private static final Logger LOG = LoggerFactory.getLogger(SnowflakeIdWorkerTest.class);
+
     @BeforeEach
     void setUp() {
         LOG.info("==================开始测试唯一雪花ID工具===========");
@@ -25,8 +28,15 @@ class SnowflakeIdWorkerTest {
     void tearDown() {
         LOG.info("==================结束测试唯一雪花ID工具===========");
     }
+
     @Test
     void generateId() {
-        System.out.println(SnowflakeIdWorker.generateId());
+        for (int i = 0; i < 10; i++) {
+            UUIDUtils.getKid();
+            System.out.println(UUID.randomUUID().toString());
+            System.out.println(SnowflakeIdWorker.generateId());
+        }
+
     }
+
 }

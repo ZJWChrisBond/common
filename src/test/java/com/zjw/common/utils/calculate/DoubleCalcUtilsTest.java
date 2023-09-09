@@ -18,6 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class DoubleCalcUtilsTest {
     private static final Logger LOG = LoggerFactory.getLogger(DoubleCalcUtilsTest.class);
+
     @BeforeEach
     void setUp() {
         LOG.info("==================开始测试double操作工具===========");
@@ -30,6 +31,6 @@ class DoubleCalcUtilsTest {
     }
 
     @Test
-    void test(){
+    void test() {
     }
 }

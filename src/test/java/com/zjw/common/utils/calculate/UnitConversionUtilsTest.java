@@ -17,11 +17,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class UnitConversionUtilsTest {
 
     @Test
-    void test(){
-        assertEquals(0,DoubleCalcUtils.doubleCompare(12.32,UnitConversionUtils.conversion(new BigDecimal(12323.230),
-                UnitConversionUtils.UnitsEnum.LG_M,UnitConversionUtils.UnitsEnum.LG_KM).doubleValue()));
-        assertEquals(0,DoubleCalcUtils.doubleCompare(12.323,UnitConversionUtils.conversion(new BigDecimal(12323.230),
-                UnitConversionUtils.UnitsEnum.LG_M,UnitConversionUtils.UnitsEnum.LG_KM,3).doubleValue()));
+    void test() {
+        assertEquals(0, DoubleCalcUtils.doubleCompare(12.32, UnitConversionUtils.conversion(new BigDecimal(12323.230),
+                UnitConversionUtils.UnitsEnum.LG_M, UnitConversionUtils.UnitsEnum.LG_KM).doubleValue()));
+        assertEquals(0, DoubleCalcUtils.doubleCompare(12.323, UnitConversionUtils.conversion(new BigDecimal(12323.230),
+                UnitConversionUtils.UnitsEnum.LG_M, UnitConversionUtils.UnitsEnum.LG_KM, 3).doubleValue()));
     }
 
 }

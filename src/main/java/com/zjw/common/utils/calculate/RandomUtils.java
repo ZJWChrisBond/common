@@ -13,11 +13,12 @@ import java.util.Random;
 public class RandomUtils {
     /**
      * 在[min,max]产生随机数
+     *
      * @param min
      * @param max
      * @return
      */
-    public static int getRandomInt(int min,int max){
+    public static int getRandomInt(int min, int max) {
         Random rand = new Random();
         int randNumber = rand.nextInt(max - min + 1) + min;
         return randNumber;
@@ -25,13 +26,14 @@ public class RandomUtils {
 
     /**
      * 在[min,max]产生随机数  
+     *
      * @param min
      * @param max
      * @return
      */
-    public static Double getRandomDouble(Double min,Double max){
+    public static Double getRandomDouble(Double min, Double max) {
         Random rand = new Random();
-        Double randNumber = rand.nextDouble()* (max - min) + min;
+        Double randNumber = rand.nextDouble() * (max - min) + min;
         return randNumber;
     }
 }

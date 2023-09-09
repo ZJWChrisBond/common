@@ -13,6 +13,7 @@ import java.security.MessageDigest;
 public class EncryptUtils {
     /**
      * MD5加密
+     *
      * @param plainText
      * @return
      */
