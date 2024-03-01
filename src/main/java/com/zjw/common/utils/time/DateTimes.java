@@ -75,8 +75,8 @@ public class DateTimes {
         }
         if (source.contains("T") || source.contains("+")) {
             Timestamp timestamp = DateTimes.parseTimestamp(source);
-            return null;
-//            return Converts.convert(timestamp, LocalDate.class);
+            LocalDateTime localDateTime = timestamp.toLocalDateTime();
+            return localDateTime.toLocalDate();
         } else {
             return LocalDate.parse(source, DateTimeFormatter.ISO_DATE);
         }
