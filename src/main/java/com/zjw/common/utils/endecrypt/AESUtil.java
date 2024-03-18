@@ -6,7 +6,6 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
 /**
@@ -18,17 +17,17 @@ public class AESUtil {
 
     private static final String KEY_AES = "AES";
     private static final String KEY_MD5 = "MD5";
-    private static final MessageDigest md5Digest;
+//    private static final MessageDigest md5Digest;
 
     private static final String KEY_TYPE = "{aes}";
 
-    static {
-        try {
-            md5Digest = MessageDigest.getInstance(KEY_MD5);
-        } catch (NoSuchAlgorithmException e) {
-            throw new IllegalArgumentException("Not a valid encrypt/decrypt algorithm", e);
-        }
-    }
+//    static {
+//        try {
+//            md5Digest = MessageDigest.getInstance(KEY_MD5);
+//        } catch (NoSuchAlgorithmException e) {
+//            throw new IllegalArgumentException("Not a valid encrypt/decrypt algorithm", e);
+//        }
+//    }
 
     /**
      * 加密
@@ -64,7 +63,11 @@ public class AESUtil {
                 data = StringUtils.removeStart(data, KEY_TYPE);
                 content = Base64.getDecoder().decode(data.getBytes());
             }
-            SecretKeySpec keySpec = new SecretKeySpec(md5Digest.digest(key.getBytes(StandardCharsets.UTF_8)), KEY_AES);
+            // todo 可以digest的固定值，放在static下，避免多次
+            MessageDigest md5Digest = MessageDigest.getInstance(KEY_MD5);
+            byte[] digest = md5Digest.digest(key.getBytes(StandardCharsets.UTF_8));
+
+            SecretKeySpec keySpec = new SecretKeySpec(digest, KEY_AES);
             Cipher cipher = Cipher.getInstance(KEY_AES);
             cipher.init(mode, keySpec);
             byte[] result = cipher.doFinal(content);
