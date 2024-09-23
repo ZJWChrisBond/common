@@ -62,23 +62,23 @@ public class DateTimes {
         if (value.contains("Z") || value.contains("+")) {
             return DateTimes.parseTimestamp(value).toLocalDateTime();
         }
-        return LocalDateTime.parse(value);
+        return LocalDateTime.parse(value, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
     }
 
     /**
      * Parse {@link String} to {@link LocalDate}.
      */
 
-    public LocalDate convert(String source) {
-        if (StringUtils.isBlank(source)) {
+    public static LocalDate parseLocalDate(String value) {
+        if (StringUtils.isBlank(value)) {
             return null;
         }
-        if (source.contains("T") || source.contains("+")) {
-            Timestamp timestamp = DateTimes.parseTimestamp(source);
+        if (value.contains("T") || value.contains("+")) {
+            Timestamp timestamp = DateTimes.parseTimestamp(value);
             LocalDateTime localDateTime = timestamp.toLocalDateTime();
             return localDateTime.toLocalDate();
         } else {
-            return LocalDate.parse(source, DateTimeFormatter.ISO_DATE);
+            return LocalDate.parse(value, DateTimeFormatter.ISO_DATE);
         }
     }
 
